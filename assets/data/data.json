@@ -1,0 +1,44 @@
+{
+    "event": [
+        {
+            "name": "Festa via Tripoli",
+            "link": "https://www.torinoggi.it/2025/03/06/leggi-notizia/argomenti/eventi-11/articolo/animazioni-e-bancarelle-ora-via-tripoli-si-veste-a-festa.html",
+            "latInitial": "45.036211",
+            "longItial": "7.640906",
+            "latEnd": "45.046432",
+            "longEnd": "7.646444"
+        },
+        {
+            "name": "Festa via Monginevro",
+            "link": "https://www.torinoggi.it/2025/03/07/leggi-notizia/argomenti/eventi-11/articolo/festa-di-primavera-per-la-festa-della-donna-in-via-monginevro.html",
+            "latInitial": "45.064831",
+            "longItial": "7.648346",
+            "latEnd": "45.066137",
+            "longEnd": "7.615962"
+        },
+        {
+            "name": "Festa via San Donato",
+            "link": "https://www.torinoggi.it/2025/03/11/leggi-notizia/argomenti/eventi-11/articolo/giochi-negozi-aperti-e-bancarelle-a-san-donato-arriva-la-primavera.html",
+            "latInitial": "45.077612",
+            "longItial": "7.668855",
+            "latEnd": "45.084007",
+            "longEnd": "7.655993"
+        },
+        {
+            "name": "Festa corso Belgio",
+            "link": "https://www.torinoggi.it/2025/03/12/leggi-notizia/argomenti/vanchiglia/articolo/torna-corso-belgio-in-bancarella-una-festa-di-quartiere-tra-tradizione-e-novita.html",
+            "latInitial": "45.071370",
+            "longItial": "7.703226",
+            "latEnd": "45.075088",
+            "longEnd": "7.725953"
+        },
+        {
+            "name": "Festa via Nizza",
+            "link": "https://www.torinoggi.it/2025/03/07/leggi-notizia/argomenti/eventi-11/articolo/evviva-la-primavera-una-giornata-di-festa-in-via-nizza-per-tutta-la-famiglia.html",
+            "latInitial": "45.043593",
+            "longItial": "7.671598",
+            "latEnd": "45.053762",
+            "longEnd": "7.675537"
+        }
+    ]
+}
