@@ -142,6 +142,17 @@ class _MyHomePageState extends State<MyHomePage> {
                             subdomains: ['a', 'b', 'c'],
                           ),
                           initialPoint != null
+                              ? PolylineLayer(
+                                polylines: [
+                                  Polyline(
+                                    points: [initialPoint!, endPoint!],
+                                    strokeWidth: 4.0,
+                                    color: Colors.blue,
+                                  ),
+                                ],
+                              )
+                              : SizedBox.shrink(),
+                          initialPoint != null
                               ? MarkerLayer(
                                 markers: [
                                   Marker(
@@ -150,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     point: initialPoint!,
                                     child: Icon(
                                       Icons.location_on,
-                                      color: Colors.blue,
+                                      color: Colors.red,
                                       size: 40.0,
                                     ),
                                   ),
