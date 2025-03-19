@@ -39,8 +39,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final MapController controller = MapController();
   List<Event>? events;
   Event? selectedEVent;
+
+  final double zoom = 15;
 
   @override
   void initState() {
@@ -97,6 +100,22 @@ class _MyHomePageState extends State<MyHomePage> {
                             title: Text(event.name),
                             subtitle: Text(event.link),
                             onTap: () {
+                              initialPoint = LatLng(
+                                double.parse(event.latInitial),
+                                double.parse(event.longInitial),
+                              );
+
+                              endPoint = LatLng(
+                                double.parse(event.latEnd),
+                                double.parse(event.longEnd),
+                              );
+
+                              centerPoint = Geodesy()
+                                  .midPointBetweenTwoGeoPoints(
+                                    initialPoint!,
+                                    endPoint!,
+                                  );
+                              controller.move(centerPoint!, zoom);
                               setState(() {
                                 selectedEVent = event;
                               });
@@ -108,48 +127,48 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       width: screenWidth / 2,
                       height: screenHeight,
-                      child:
-                          selectedEVent == null
-                              ? Container()
-                              : FlutterMap(
-                                options: MapOptions(
-                                  maxZoom: 100,
-                                  minZoom: 10,
-                                  initialZoom: 15,
-                                  initialCenter: centerPoint!,
-                                ),
-                                children: [
-                                  TileLayer(
-                                    urlTemplate:
-                                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                                    subdomains: ['a', 'b', 'c'],
+                      child: FlutterMap(
+                        mapController: controller,
+                        options: MapOptions(
+                          maxZoom: 100,
+                          minZoom: 10,
+                          initialZoom: zoom,
+                          initialCenter: LatLng(45.064038, 7.679946),
+                        ),
+                        children: [
+                          TileLayer(
+                            urlTemplate:
+                                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                            subdomains: ['a', 'b', 'c'],
+                          ),
+                          initialPoint != null
+                              ? MarkerLayer(
+                                markers: [
+                                  Marker(
+                                    width: 80.0,
+                                    height: 80.0,
+                                    point: initialPoint!,
+                                    child: Icon(
+                                      Icons.location_on,
+                                      color: Colors.blue,
+                                      size: 40.0,
+                                    ),
                                   ),
-                                  MarkerLayer(
-                                    markers: [
-                                      Marker(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        point: initialPoint!,
-                                        child: Icon(
-                                          Icons.location_on,
-                                          color: Colors.blue,
-                                          size: 40.0,
-                                        ),
-                                      ),
-                                      Marker(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        point: endPoint!,
-                                        child: Icon(
-                                          Icons.location_on,
-                                          color: Colors.red,
-                                          size: 40.0,
-                                        ),
-                                      ),
-                                    ],
+                                  Marker(
+                                    width: 80.0,
+                                    height: 80.0,
+                                    point: endPoint!,
+                                    child: Icon(
+                                      Icons.location_on,
+                                      color: Colors.red,
+                                      size: 40.0,
+                                    ),
                                   ),
                                 ],
-                              ),
+                              )
+                              : SizedBox.shrink(),
+                        ],
+                      ),
                     ),
                   ],
                 ),
