@@ -5,6 +5,8 @@ class Event {
   String longInitial;
   String latEnd;
   String longEnd;
+  DateTime startDate;
+  DateTime endDate;
 
   Event({
     required this.name,
@@ -13,6 +15,8 @@ class Event {
     required this.longInitial,
     required this.latEnd,
     required this.longEnd,
+    required this.startDate,
+    required this.endDate,
   });
 
   // Método para converter um JSON em um objeto Event
@@ -24,6 +28,9 @@ class Event {
       longInitial: json['longItial'],
       latEnd: json['latEnd'],
       longEnd: json['longEnd'],
+      startDate: DateTime.parse(json["dateStart"]),
+      endDate: DateTime.parse(json["dataEnd"]),
+    
     );
   }
 }

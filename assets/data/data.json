@@ -6,7 +6,9 @@
             "latInitial": "45.036211",
             "longItial": "7.640906",
             "latEnd": "45.046432",
-            "longEnd": "7.646444"
+            "longEnd": "7.646444",
+            "dateStart": "2025-03-09T09:00",
+            "dataEnd": "2025-03-09T20:00"
         },
         {
             "name": "Festa via Monginevro",
@@ -14,7 +16,9 @@
             "latInitial": "45.064831",
             "longItial": "7.648346",
             "latEnd": "45.066137",
-            "longEnd": "7.615962"
+            "longEnd": "7.615962",
+            "dateStart": "2025-06-15T09:00",
+            "dataEnd": "2025-06-15T20:00"
         },
         {
             "name": "Festa via San Donato",
@@ -22,7 +26,9 @@
             "latInitial": "45.077612",
             "longItial": "7.668855",
             "latEnd": "45.084007",
-            "longEnd": "7.655993"
+            "longEnd": "7.655993",
+            "dateStart": "2025-03-16T09:00",
+            "dataEnd": "2025-03-16T20:00"
         },
         {
             "name": "Festa corso Belgio",
@@ -30,7 +36,9 @@
             "latInitial": "45.071370",
             "longItial": "7.703226",
             "latEnd": "45.075088",
-            "longEnd": "7.725953"
+            "longEnd": "7.725953",
+            "dateStart": "2025-03-16T09:00",
+            "dataEnd": "2025-03-16T20:00"
         },
         {
             "name": "Festa via Nizza",
@@ -38,7 +46,9 @@
             "latInitial": "45.043593",
             "longItial": "7.671598",
             "latEnd": "45.053762",
-            "longEnd": "7.675537"
+            "longEnd": "7.675537",
+            "dateStart": "2025-03-09T09:00",
+            "dataEnd": "2025-03-09T20:00"
         }
     ]
 }

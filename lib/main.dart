@@ -6,6 +6,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:torino_festa/model/event.dart';
 import 'package:geodesy/geodesy.dart';
+import 'package:torino_festa/ui/event_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -96,9 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         itemCount: events!.length,
                         itemBuilder: (context, index) {
                           Event event = events![index];
-                          return ListTile(
-                            title: Text(event.name),
-                            subtitle: Text(event.link),
+                          return GestureDetector(
                             onTap: () {
                               initialPoint = LatLng(
                                 double.parse(event.latInitial),
@@ -120,7 +119,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 selectedEVent = event;
                               });
                             },
+
+                            child: EventItem(event: event),
                           );
+
+                        
                         },
                       ),
                     ),
@@ -196,6 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
           (decodedString['event'] as List)
               .map((eventData) => Event.fromJson(eventData))
               .toList();
+      events!.sort((a, b) => a.startDate.compareTo(b.startDate));
     });
   }
 }
